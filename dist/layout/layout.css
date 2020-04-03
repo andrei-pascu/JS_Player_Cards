@@ -4,9 +4,6 @@ html {
 body {
   background-color: green; }
 
-div {
-  box-sizing: border-box; }
-
 #root {
   display: flex;
   justify-content: center;
@@ -16,23 +13,13 @@ div {
   width: 100%; }
 
 #card_container {
-  width: 250px;
+  width: 100px;
   height: 400px;
   border: 2px solid black;
-  position: relative;
-  padding-top: 50px; }
+  position: relative; }
 
 #select_player_container {
   position: absolute;
   width: 100%;
   top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1px;
-  min-height: 50px;
-  border: solid 2px yellow; }
-
-.element {
-  color: green; }
+  left: 0; }

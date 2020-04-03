@@ -1,23 +1,28 @@
-// var JSON_data = JSON.parse(the_json)
+// In a real case scenario, this data would 
+    // be served together with the builded app by some backend service
+    // or loaded async on the frontend side
+const data = request_data;
+const players = data['players'];
+console.log(players[0]['player']['id'])
 
-// alert('on')
-console.log(request_data)
+function buildCardHTML() {
 
+    var target = document.getElementById('card_content_container');
+    target.innerHTML = `
+    <div>
+    <div>
+        <img src="../p${players[0]['player']['id']}.png"/>
+    </div>
 
-// function readTextFile(file, callback) {
-//     var rawFile = new XMLHttpRequest();
-//     rawFile.overrideMimeType("application/json");
-//     rawFile.open("GET", file, true);
-//     rawFile.onreadystatechange = function() {
-//         if (rawFile.readyState === 4 && rawFile.status == "200") {
-//             callback(rawFile.responseText);
-//         }
-//     }
-//     rawFile.send(null);
-// }
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+    </div>
+    `;
 
-// //usage:
-// readTextFile("assets/the_json.json", function(text){
-//     var data = JSON.parse(text);
-//     console.log(data);
-// });
+}
+
+buildCardHTML()

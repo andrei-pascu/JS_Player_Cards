@@ -45,3 +45,9 @@ div {
   background-image: url("assets/assets/badges_sprite.png");
   height: 50px;
   width: 50px; }
+
+.player_stats_row {
+  height: 1px;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between; }

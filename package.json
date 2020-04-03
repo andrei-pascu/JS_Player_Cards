@@ -1,0 +1,19 @@
+{
+  "name": "player_cards",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
+  "version": "1.0.0",
+  "description": "Display player cards vanilla JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o dist"
+  },
+  "author": "Cristian A Pascu",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

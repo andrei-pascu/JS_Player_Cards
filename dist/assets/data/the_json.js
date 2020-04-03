@@ -317,5 +317,36 @@ var request_data = {
         ]
       }
     ]
+  };
+
+  
+const team_badges = {
+  "Tottenham Hotspur": {
+      "badge_x": -10,
+      "badge_y": -10
+  },
+  "Manchester City": {
+      "badge_x": -10,
+      "badge_y": -10
+  },
+  "Manchester United": {
+      "badge_x": -10,
+      "badge_y": -10
+  },
+  "Arsenal": {
+      "badge_x": -10,
+      "badge_y": -10
+  },
+  "Leicester City": {
+      "badge_x": -10,
+      "badge_y": -10
   }
+};
+
+  
+const field_positions = {
+  "D": "Defender",
+  "M": "Midfielder",
+  "F": "Forward"
+};
   

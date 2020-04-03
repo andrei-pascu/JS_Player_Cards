@@ -1,43 +1,59 @@
 // In a real case scenario, this data would 
     // be served together with the builded app by some backend service
     // or loaded async on the frontend side
-const data = request_data;
-const players = data['players'];
-console.log(players[0]['player']['id'])
+let get_data;
+let DATA_players;
+let DATA_badges_css;
+let DATA_field_positions;
+let DOM_ROOT;
 
-function buildCardHTML() {
+(function initData() {
+    get_data = request_data;
+    DATA_players = get_data['players'];
+    DATA_badges_css = team_badges;
+    DATA_field_positions = field_positions;
+    DOM_ROOT = document.getElementById('card_content_container');
+})()
 
-    var DOM_card_container = document.getElementById('card_content_container');
-        var DOM_player_image = DOM_card_container.querySelector('.player_image')
-        var DOM_player_team_logo = DOM_card_container.querySelector('.player_team_logo')
 
-    DOM_player_image.setAttribute("src", `dist/assets/assets/p${players[0]['player']['id']}.png`);
-    // DOM_player_team_logo.setAttribute("src", `assets/assets/p${players[0]['player']['id']}.png`);
-    
-    // target.innerHTML = `
-    // <div>
-    //     <div class="player_image_container">
-    //         <img 
-    //             class="player_image" 
-    //             src="assets/assets/p${players[0]['player']['id']}.png"
-    //         />
-    //     </div>
+function MapData(selected_player) {
+    function CREATE_DATA(data, selected_player, badges_css, field_positions) {
+        this.player_first_name =  data[selected_player]['player']['name']['first'];
+        this.player_last_name =   data[selected_player]['player']['name']['last'];
+        this.player_full_name =   this.player_first_name + this.player_last_name;
+        this.player_type =  field_positions[data[selected_player]['player']['info']['position']];
+        this.playerPortrait = `dist/assets/assets/p${data[selected_player]['player']['id']}.png`;
+        this.team = data[selected_player]['player']['currentTeam']['name'];
+        this.badge = badges_css[this.team];
+        this.badge_pos = `${this.badge['badge_x']}, ${this.badge['badge_y']}`
+    }
 
-    //     <div class="player_details_container>
-    //         <div class="player_team_logo_container">
-    //         </div>
-    //         <h2 class="player_name"></h2>
-    //         <h3 class="player_type"></h3>
-    //         <div class="player_stats_container">
-    //             <div class="player_stats_row">
-    //                 <p class="player_stat_name"></p>
-    //                 <p class="player_stat_value"></p>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </div>
-    // `;
-
+    let DATA = new CREATE_DATA(DATA_players, selected_player, DATA_badges_css, DATA_field_positions)
+    console.log(DATA)
+    return DATA;
 }
 
-buildCardHTML()
+function buildCardHTML() {
+    let selected_player = 2;
+    let DATA = MapData(selected_player);
+    let DOM = {
+        'player_image': DOM_ROOT.querySelector('.player_image'),
+        'player_team_logo': DOM_ROOT.querySelector('.player_team_logo'),
+        'player_name': DOM_ROOT.querySelector('.player_name'),
+        'player_type': DOM_ROOT.querySelector('.player_type')
+    }
+
+
+
+
+    DOM['player_image'].setAttribute('src', DATA.playerPortrait);
+    DOM['player_team_logo'].setAttribute('style', DATA.badge_pos);
+    DOM['player_name'].innerHTML = DATA.player_full_name;
+    DOM['player_type'].innerHTML = DATA.player_type;
+}
+
+
+
+
+
+document.addEventListener('load', buildCardHTML());

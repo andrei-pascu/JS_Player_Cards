@@ -41,7 +41,7 @@ div {
 .player_image {
   height: 100%; }
 
-.player_team_logo_container {
+.player_team_logo {
   background-image: url("assets/assets/badges_sprite.png");
   height: 50px;
   width: 50px; }

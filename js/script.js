@@ -17,36 +17,40 @@ var DOM_ROOT;
     DOM_ROOT = document.getElementById('card_content_container');
 })();
 
+
 function MapData(selected_player) {
     function CREATE_DATA(data, selected_player, badges_css, field_positions) {
         var _this = this;
-
         this.player_first_name = data[selected_player]['player']['name']['first'];
         this.player_last_name = data[selected_player]['player']['name']['last'];
         this.player_full_name = this.player_first_name + this.player_last_name;
         this.player_type = field_positions[data[selected_player]['player']['info']['position']];
         this.playerPortrait = "dist/assets/assets/p".concat(data[selected_player]['player']['id'], ".png");
+
         this.team = data[selected_player]['player']['currentTeam']['name'];
         this.badge = badges_css[this.team];
         this.badge_pos = "".concat(this.badge['badge_x'], ", ").concat(this.badge['badge_y']);
+
         this.stats_list = {};
-        this.stats_builder = data[selected_player]['stats'].forEach(function (value) {
-            var stat_name = value['name'];
-            var stat_value = value['value'];
-            _this.stats_list[stat_name] = stat_value;
-        });
-        this.stats_display = {};
-        this.stats_display['appearances'] = this.stats_list['appearances'];
-        this.stats_display['goals'] = this.stats_list['goals'];
-        this.stats_display['goal_assist'] = this.stats_list['goal_assist'];
-        this.stats_display['goals_per_match'] = (this.stats_list['goals'] / this.stats_list['appearances']).toFixed(2);
-        this.stats_display['passes_per_min'] = ((this.stats_list['fwd_pass'] + this.stats_list['backward_pass']) / this.stats_list['mins_played']).toFixed(2);
+            this.stats_builder = data[selected_player]['stats'].forEach(function (value) {
+                var stat_name = value['name'];
+                var stat_value = value['value'];
+                _this.stats_list[stat_name] = stat_value;
+            });
+        this.stats_display = {
+            'appearances': this.stats_list['appearances'],
+            'goals': this.stats_list['goals'],
+            'goal_assist': this.stats_list['appearances'],
+            'goals_per_match': (this.stats_list['goals'] / this.stats_list['appearances']).toFixed(2),
+            'passes_per_min': ((this.stats_list['fwd_pass'] + this.stats_list['backward_pass']) / this.stats_list['mins_played']).toFixed(2),
+        };
     }
 
     var DATA = new CREATE_DATA(DATA_players, selected_player, DATA_badges_css, DATA_field_positions);
     console.log(DATA);
     return DATA;
 }
+
 
 function buildCardHTML() {
     var selected_player = 1;

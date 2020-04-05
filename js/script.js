@@ -7,6 +7,7 @@ var get_data;
 var DATA_players;
 var DATA_badges_css;
 var DATA_field_positions;
+var ROOT;
 var DOM_ROOT;
 var DOM;
 
@@ -15,10 +16,11 @@ var DOM;
     DATA_players = get_data['players'];
     DATA_badges_css = team_badges;
     DATA_field_positions = field_positions;
-    DOM_ROOT = document.getElementById('card_container');
+    ROOT = document.querySelector('#root');
+    DOM_ROOT = ROOT.querySelector('#card_container');
     DOM = {
-        'root': document.querySelector('#root'),
-        'my_take_101': document.querySelector('#my_take_101'),
+        'my_take_101_arrow': ROOT.querySelector('#my_take_101_arrow'),
+        'my_take_101': ROOT.querySelector('#my_take_101'),
         'player_image': DOM_ROOT.querySelector('.player_image'),
         'player_team_logo_element': DOM_ROOT.querySelector('.player_team_logo_element'),
         'player_name': DOM_ROOT.querySelector('.player_name'),
@@ -151,9 +153,9 @@ console.log(DOM)
 DOM['my_take_101'].addEventListener('click', function() {
     if (!toggle_me_take) {
         toggle_me_take = true;
-        DOM['root'].classList.add('my_take_101')
+        ROOT.classList.add('my_take_101')
     } else {
         toggle_me_take = false;
-        DOM['root'].classList.remove('my_take_101')
+        ROOT.classList.remove('my_take_101')
     }
 })

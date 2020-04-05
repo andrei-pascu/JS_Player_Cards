@@ -231,6 +231,20 @@ div {
       background-color: black;
       transition: 300ms; }
 
+.my_take_101 #my_take_101 {
+  border: 2px solid deepskyblue;
+  background-color: deepskyblue;
+  transition: linear 1500ms; }
+  .my_take_101 #my_take_101:before {
+    background-color: deepskyblue; }
+  .my_take_101 #my_take_101:hover {
+    color: #aa3600;
+    transition: 300ms; }
+    .my_take_101 #my_take_101:hover span {
+      color: #aa3600; }
+    .my_take_101 #my_take_101:hover:before {
+      background-color: #aa3600; }
+
 .my_take_101 #card_container {
   border-radius: 23px;
   width: 315px;

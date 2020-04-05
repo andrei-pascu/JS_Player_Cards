@@ -1,13 +1,33 @@
 // .hidden_select {
 //     display: none;
 // }
+#select_player_input {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 11px 10px 10px 10px;
+    font-size: 16px;
 
-.hidden_select #select_player_selected {
-    display: block;
+    &:before {
+        user-select: none;
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        right: 14px;
+        bottom: 13px;
+        height: 14px;
+        width: 14px;
+        background-size: cover;
+        background-image: url('assets/new_assets/iconmonstr-arrow-65.svg');
+    }
 }
-
-.hidden_select #select_player_list_container {
-    display: none;
+.hidden_select {
+    #select_player_selected {
+        display: block;
+    }
+    #select_player_list_container {
+        display: none;
+    }
 }
 
 
@@ -16,4 +36,24 @@
 }
 #select_player_list_container {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    min-height: 40px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+
+.select_element {
+    user-select: none;
+    background-color: rgb(234,234,234);
+    padding-left: 10px;
+    height: 1px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 3px;
 }

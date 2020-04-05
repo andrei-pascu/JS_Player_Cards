@@ -1,10 +1,14 @@
 .player_details_container {
     position: relative;
+    padding: 16px;
+    height: 100%;
+    background-color: rgb(237, 0, 78)
 }
 
 .player_image_container {
+    position: relative;
     height: 250px;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-left: 7px;
 }
 
@@ -19,7 +23,8 @@
     background-color: white;
     position: absolute;
     right: 5%;
-    top: -35%;
+    bottom: -15%;
+    z-index: 999;
 }
 
 .player_team_logo_element {
@@ -59,9 +64,40 @@
     }
 }
 
-.player_stats_row {
-    height: 1px;
-    min-height: 20px;
-    display: flex;
-    justify-content: space-between;
+.player_name {
+    margin-bottom: 8px;
+    color: white;
+    font-size: 20px;
+}
+.player_type {
+    margin-bottom: 12px;
+    color: white;
+    font-size: 16px;
+    user-select: none;
+}
+
+.player_stats_container {
+    .player_stats_row {
+        height: 1px;
+        min-height: 38px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        margin-bottom: 3px;
+        background-color: #eaeaea;
+        box-shadow: 0 0 1px 1px #8a8a8a;
+
+        .player_stat_value {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        &:nth-last-child() {
+            margin-bottom: 0;
+        }
+    }
+
+    
+
 }

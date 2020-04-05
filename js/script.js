@@ -89,7 +89,7 @@ function buildCardHTML(selected_player, init) {
             console.log(DATA_players[i])
             console.log(MapPlayerNames(i))
             DOM['select_player_list_container'].insertAdjacentHTML('beforeend', 
-            '<div key='+i+'>' + MapPlayerNames(i) + '</div>'
+            '<div class="select_element" key='+i+'>' + MapPlayerNames(i) + '</div>'
             )
         }
     } else {
@@ -131,8 +131,11 @@ DOM['select_player_input'].addEventListener('click',
 );
 DOM['select_player_list_container'].addEventListener('click', 
     function(e) {
-        var target_index = e.target.getAttribute('key');
-        buildCardHTML(target_index)
-        DOM['select_player_input'].classList.add('hidden_select')
+        console.log(e.target.id)
+        if (e.target.id !== 'select_player_list_container') {
+            var target_index = e.target.getAttribute('key');
+            buildCardHTML(target_index)
+            DOM['select_player_input'].classList.add('hidden_select')
+        }
     }
 );

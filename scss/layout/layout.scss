@@ -10,7 +10,6 @@ div, section ,p ,h1 ,h2, h3, span {
   box-sizing: border-box;
 }
 
-
 html {
     padding: 0;
     background-color: green;
@@ -28,6 +27,8 @@ div {
     box-sizing: border-box;
 }
 
+
+
 #root {
     display: flex;
     justify-content: center;
@@ -35,6 +36,8 @@ div {
     height: 1px; // IE11
     min-height: 100vh;
     width: 100%;
+    flex-direction: column;
+    position: relative;
 }
 
 #card_container {
@@ -66,3 +69,23 @@ div {
 
 #select_player {
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

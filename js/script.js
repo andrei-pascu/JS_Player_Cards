@@ -17,6 +17,8 @@ var DOM;
     DATA_field_positions = field_positions;
     DOM_ROOT = document.getElementById('card_container');
     DOM = {
+        'root': document.querySelector('#root'),
+        'my_take_101': document.querySelector('#my_take_101'),
         'player_image': DOM_ROOT.querySelector('.player_image'),
         'player_team_logo_element': DOM_ROOT.querySelector('.player_team_logo_element'),
         'player_name': DOM_ROOT.querySelector('.player_name'),
@@ -139,3 +141,19 @@ DOM['select_player_list_container'].addEventListener('click',
         }
     }
 );
+
+
+
+
+
+var toggle_me_take = false;
+console.log(DOM)
+DOM['my_take_101'].addEventListener('click', function() {
+    if (!toggle_me_take) {
+        toggle_me_take = true;
+        DOM['root'].classList.add('my_take_101')
+    } else {
+        toggle_me_take = false;
+        DOM['root'].classList.remove('my_take_101')
+    }
+})

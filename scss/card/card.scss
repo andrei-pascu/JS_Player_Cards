@@ -1,18 +1,62 @@
-
+.player_details_container {
+    position: relative;
+}
 
 .player_image_container {
-    height: 180px;
-    padding-top: 30px;
+    height: 250px;
+    padding-top: 40px;
+    padding-left: 7px;
 }
 
 .player_image {
     height: 100%;
 }
 
-.player_team_logo {
+.player_team_logo_container {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 5%;
+    top: -35%;
+}
+
+.player_team_logo_element {
+    position: relative;
+    top: -7.5px;
+    left: -7.5px;
+    height: 100px;
+    width: 100px;
     background-image: url('assets/assets/badges_sprite.png');
-    height: 50px;
-    width: 50px;
+    background-size: auto;
+    transform: scale(0.75);
+    border-radius: 50%;
+    
+    &.Tottenham_Hotspur {
+        background-position-x: -500px;
+        background-position-y: -1000px;
+    }
+    
+    &.Manchester_City {
+        background-position-x: -800px;
+        background-position-y: -700px;
+    }
+    
+    &.Manchester_United {
+        background-position-x: -600px;
+        background-position-y: -800px;
+    }
+    
+    &.Arsenal {
+        background-position-x: -100px;
+        background-position-y: -100px;
+    }
+    
+    &.Leicester_City {
+        background-position-x: 00px;
+        background-position-y: 00px;
+    }
 }
 
 .player_stats_row {

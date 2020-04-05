@@ -322,24 +322,24 @@ var request_data = {
   
 const team_badges = {
   "Tottenham Hotspur": {
-      "badge_x": -10,
-      "badge_y": -10
+      "badge_x": -500,
+      "badge_y": -1000
   },
   "Manchester City": {
-      "badge_x": -10,
-      "badge_y": -10
+      "badge_x": -800,
+      "badge_y": -700
   },
   "Manchester United": {
-      "badge_x": -10,
-      "badge_y": -10
+      "badge_x": -600,
+      "badge_y": -800
   },
   "Arsenal": {
-      "badge_x": -10,
-      "badge_y": -10
+      "badge_x": -100,
+      "badge_y": -100
   },
   "Leicester City": {
-      "badge_x": -10,
-      "badge_y": -10
+      "badge_x": 0,
+      "badge_y": 0
   }
 };
 

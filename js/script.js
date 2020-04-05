@@ -18,13 +18,13 @@ var DOM;
     DOM_ROOT = document.getElementById('card_container');
     DOM = {
         'player_image': DOM_ROOT.querySelector('.player_image'),
-        'player_team_logo': DOM_ROOT.querySelector('.player_team_logo'),
+        'player_team_logo_element': DOM_ROOT.querySelector('.player_team_logo_element'),
         'player_name': DOM_ROOT.querySelector('.player_name'),
         'player_type': DOM_ROOT.querySelector('.player_type'),
         'player_stats_container': DOM_ROOT.querySelector('.player_stats_container'),
         'select_player_list_container': DOM_ROOT.querySelector('#select_player_list_container'),
         'select_player_input': DOM_ROOT.querySelector('#select_player_input'),
-        'select_player_list_container': DOM_ROOT.querySelector('#select_player_list_container')
+        'select_player_selected': DOM_ROOT.querySelector('#select_player_selected')
     };
 })();
 
@@ -53,7 +53,14 @@ function MapData(selected_player) {
 
         this.team = data[selected_player]['player']['currentTeam']['name'];
         this.badge = badges_css[this.team];
-        this.badge_pos = "".concat(this.badge['badge_x'], ", ").concat(this.badge['badge_y']);
+        this.badge_pos = 'background-position-x:' + this.badge['badge_x'] + 'px; ' +  'background-position-y:' + this.badge['badge_y'] + 'px';
+
+        this.team_shrt = data[selected_player]['player']['currentTeam']['name'].replace(' ', '_');
+        console.log(this.team_shrt)
+
+
+
+
 
         this.stats_list = {};
             this.stats_builder = data[selected_player]['stats'].forEach(function (value) {
@@ -85,9 +92,11 @@ function buildCardHTML(selected_player, init) {
             '<div key='+i+'>' + MapPlayerNames(i) + '</div>'
             )
         }
+    } else {
+        DOM['select_player_selected'].innerHTML = DATA.player_full_name;
     }
     DOM['player_image'].setAttribute('src', DATA.playerPortrait);
-    DOM['player_team_logo'].setAttribute('style', DATA.badge_pos);
+    DOM['player_team_logo_element'].setAttribute('class', 'player_team_logo_element '+ DATA.team_shrt);
     DOM['player_name'].innerHTML = DATA.player_full_name;
     DOM['player_type'].innerHTML = DATA.player_type;
     DOM['player_stats_container'].innerHTML=

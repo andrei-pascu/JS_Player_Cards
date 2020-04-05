@@ -1,0 +1,19 @@
+// .hidden_select {
+//     display: none;
+// }
+
+.hidden_select #select_player_selected {
+    display: block;
+}
+
+.hidden_select #select_player_list_container {
+    display: none;
+}
+
+
+#select_player_selected {
+    display: none;
+}
+#select_player_list_container {
+    display: block;
+}

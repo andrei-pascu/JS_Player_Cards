@@ -122,7 +122,6 @@ DOM['select_player_input'].addEventListener('click',
 );
 DOM['select_player_list_container'].addEventListener('click', 
     function(e) {
-        console.log(e.target.id)
         if (e.target.id !== 'select_player_list_container') {
             var target_index = e.target.getAttribute('key');
             buildCardHTML(target_index)
@@ -136,7 +135,6 @@ DOM['select_player_list_container'].addEventListener('click',
 
 
 var toggle_me_take = false;
-console.log(DOM)
 DOM['my_take_101'].addEventListener('click', function() {
     if (!toggle_me_take) {
         toggle_me_take = true;

@@ -5,7 +5,6 @@
 // or loaded async on the frontend side
 var get_data;
 var DATA_players;
-var DATA_badges_css;
 var DATA_field_positions;
 var ROOT;
 var DOM_ROOT;
@@ -14,7 +13,6 @@ var DOM;
 (function initData() {
     get_data = request_data;
     DATA_players = get_data['players'];
-    DATA_badges_css = team_badges;
     DATA_field_positions = field_positions;
     ROOT = document.querySelector('#root');
     DOM_ROOT = ROOT.querySelector('#card_container');
@@ -47,7 +45,7 @@ function MapPlayerNames(selected_player) {
 
 
 function MapData(selected_player) {
-    function CREATE_DATA(data, selected_player, badges_css, field_positions) {
+    function CREATE_DATA(data, selected_player, field_positions) {
         var _this = this;
         this.player_first_name = data[selected_player]['player']['name']['first'];
         this.player_last_name = data[selected_player]['player']['name']['last'];
@@ -70,7 +68,7 @@ function MapData(selected_player) {
         };
     }
 
-    var DATA = new CREATE_DATA(DATA_players, selected_player, DATA_badges_css, DATA_field_positions);
+    var DATA = new CREATE_DATA(DATA_players, selected_player, DATA_field_positions);
     return DATA;
 }
 

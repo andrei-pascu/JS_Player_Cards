@@ -1,7 +1,7 @@
-# JS_Player_Cards
+# About
 Valilla JS rendering of a player card based on given DATA.
 
-#Initial Setup
+# Initial Setup
 npm install  
 npm run sass_build  
         - First time build

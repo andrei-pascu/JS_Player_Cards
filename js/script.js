@@ -54,18 +54,7 @@ function MapData(selected_player) {
         this.player_full_name = MapPlayerNames(selected_player);
         this.player_type = field_positions[data[selected_player]['player']['info']['position']];
         this.playerPortrait = "dist/assets/assets/p".concat(data[selected_player]['player']['id'], ".png");
-
-        this.team = data[selected_player]['player']['currentTeam']['name'];
-        this.badge = badges_css[this.team];
-        this.badge_pos = 'background-position-x:' + this.badge['badge_x'] + 'px; ' +  'background-position-y:' + this.badge['badge_y'] + 'px';
-
-        this.team_shrt = data[selected_player]['player']['currentTeam']['name'].replace(' ', '_');
-        console.log(this.team_shrt)
-
-
-
-
-
+        this.team_short = data[selected_player]['player']['currentTeam']['name'].replace(' ', '_');
         this.stats_list = {};
             this.stats_builder = data[selected_player]['stats'].forEach(function (value) {
                 var stat_name = value['name'];
@@ -100,7 +89,7 @@ function buildCardHTML(selected_player, init) {
         DOM['select_player_selected'].innerHTML = DATA.player_full_name;
     }
     DOM['player_image'].setAttribute('src', DATA.playerPortrait);
-    DOM['player_team_logo_element'].setAttribute('class', 'player_team_logo_element '+ DATA.team_shrt);
+    DOM['player_team_logo_element'].setAttribute('class', 'player_team_logo_element '+ DATA.team_short);
     DOM['player_name'].innerHTML = DATA.player_full_name;
     DOM['player_type'].innerHTML = DATA.player_type;
     DOM['player_stats_container'].innerHTML=

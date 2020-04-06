@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss -o dist"
+    "sass_watch": "node-sass --watch scss -o dist",
+    "sass_build": "node-sass -o dist scss/index.scss"
   },
   "author": "Cristian A Pascu",
   "license": "ISC",

@@ -77,8 +77,6 @@ function buildCardHTML(selected_player, init) {
     var DATA = MapData(selected_player);
     if (init == 'init') {
         for (let i = 0; i < DATA_players.length; i++) {
-            console.log(DATA_players[i])
-            console.log(MapPlayerNames(i))
             DOM['select_player_list_container'].insertAdjacentHTML('beforeend', 
             '<div class="select_element" key='+i+'>' + MapPlayerNames(i) + '</div>'
             )

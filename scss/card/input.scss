@@ -1,6 +1,3 @@
-// .hidden_select {
-//     display: none;
-// }
 #select_player_input {
     width: 100%;
     height: 100%;
@@ -21,6 +18,7 @@
         background-image: url('assets/new_assets/iconmonstr-arrow-65.svg');
     }
 }
+
 .hidden_select {
     #select_player_selected {
         display: block;
@@ -34,6 +32,7 @@
 #select_player_selected {
     display: none;
 }
+
 #select_player_list_container {
     display: block;
     position: absolute;
@@ -44,7 +43,6 @@
     width: 100%;
     background-color: rgb(0, 0, 0);
 }
-
 
 .select_element {
     user-select: none;

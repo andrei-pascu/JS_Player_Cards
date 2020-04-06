@@ -17,17 +17,12 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    // background-position-x: -100px;
     font-family: sans-serif;
 }
+
 body {
     background: linear-gradient(45deg, rgba(0,0,0,0.5) 10%, rgba(255,255,255,0.3) 100%);
 }
-div {
-    box-sizing: border-box;
-}
-
-
 
 #root {
     display: flex;
@@ -66,26 +61,3 @@ div {
     background-color: #e6e6e6;
 
 }
-
-#select_player {
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
